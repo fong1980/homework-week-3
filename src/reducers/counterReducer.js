@@ -1,6 +1,6 @@
 //./reducer/counterReaducer
 
-export default (state = 0, { type }) => {
+export default (state = 1, { type }) => {
   switch (type) {
     case "INCREMENT":
       return state + 1

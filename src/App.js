@@ -2,15 +2,16 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import { increment, decrement } from "./actions/counter" //step6
+import { newgame } from "./actions/game" //step6
+
 import logo from "./logo.svg"
 import "./App.css"
 
 class App extends Component {
-  handleClick = () => {
-    this.props.increment() //step 7
-  }
-  handleClick_ = () => {
-    this.props.decrement()
+
+
+  handleClick= () => {
+    this.props.newgame()
   }
 
   render() {
@@ -25,8 +26,8 @@ class App extends Component {
         </p>
         // step 5
         <h1>{this.props.counter} </h1>
-        <button onClick={this.handleClick}>+</button> //step 7
-        <button onClick={this.handleClick_}>-</button>
+
+        <button onClick={this.handleClick}>Start New Game</button>
       </div>
     )
   }
@@ -35,8 +36,10 @@ class App extends Component {
 //step 4
 const mapStateToProps = state => {
   return {
-    counter: state.counter
+    //counter_: state.counter
+    game: state.game
+
   }
 }
 
-export default connect(mapStateToProps, { increment, decrement })(App) //step 4 //step 6 (increment +decrement)
+export default connect(mapStateToProps, {newgame })(App) //step 4 //step 6 (increment +decrement)

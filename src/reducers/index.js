@@ -1,9 +1,11 @@
 //  ./reducer/index.js
 
-import counter from './counterReducer'
+//mport counter from './counterReducer'
+import game from './newgameReducer'
 
 export default {
-    counter
+//    counter,
+    game
 }
 
 //step 3
