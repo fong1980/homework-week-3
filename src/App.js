@@ -32,7 +32,14 @@ class App extends Component {
         <h2>{this.props.game.newWord} </h2>
 
         <button onClick={this.handleClick}>Start New Game</button>
-        <button onClick={this.handleClick_}>make a Guess</button>
+
+        <form onSUbmit={this.handleClick_}>
+            <input type="text" />
+            <button type="submit"placeholder="First name">make a guess</button>
+        </form>
+
+        <button onClick={this.handleClick___}>+</button>
+
       </div>
     )
   }
