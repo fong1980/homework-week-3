@@ -1,8 +1,8 @@
 //app.js
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { increment, decrement } from "./actions/counter" //step6
-import { newgame } from "./actions/game" //step6
+//import { increment, decrement } from "./actions/counter" //step6
+import { newgame,makeguess } from "./actions/game" //step6
 
 import logo from "./logo.svg"
 import "./App.css"
@@ -12,6 +12,10 @@ class App extends Component {
 
   handleClick= () => {
     this.props.newgame()
+  }
+
+  handleClick_= () => {
+    this.props.makeguess()
   }
 
   render() {
@@ -25,9 +29,10 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         // step 5
-        <h1>{this.props.counter} </h1>
+        <h2>{this.props.game.newWord} </h2>
 
         <button onClick={this.handleClick}>Start New Game</button>
+        <button onClick={this.handleClick_}>make a Guess</button>
       </div>
     )
   }
@@ -42,4 +47,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {newgame })(App) //step 4 //step 6 (increment +decrement)
+export default connect(mapStateToProps, {newgame,makeguess })(App) //step 4 //step 6 (increment +decrement)

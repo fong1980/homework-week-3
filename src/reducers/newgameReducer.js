@@ -1,14 +1,17 @@
 //./reducer/counterReaducer
+import { randomWord } from "../lib/game"
 
-export default (state = 0, { type }) => {
+
+//var A = randomWord()
+
+export default (state ={} , { type }) => {
   switch (type) {
     case "NEW_GAME":
-      console.log('test')
-      return state + 1
+      return {state,newWord:randomWord()}
 
       case "MAKE_GUESS":
-        console.log('makeguess')
-        return state  +1
+        console.log(state)
+        return {guessWord:'test'}
 
     default:
       return state
