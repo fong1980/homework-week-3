@@ -42,7 +42,8 @@ class App extends Component {
 const mapStateToProps = state => {
   return {
     //counter_: state.counter
-    game: state.game
+    game: state.newgame,
+    //game: state.makeguessReducer
 
   }
 }

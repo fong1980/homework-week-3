@@ -9,12 +9,13 @@ export default (state ={} , { type }) => {
     case "NEW_GAME":
       return {state,newWord:randomWord()}
 
-      case "MAKE_GUESS":
-        console.log(state)
-        return {guessWord:'test'}
+      // case "MAKE_GUESS":
+      //   console.log(state)
+      //   return {guessWord:'test'}
 
     default:
       return state
+
 
     //step 8 handle action in reducer
   }

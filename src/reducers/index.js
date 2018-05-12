@@ -1,12 +1,13 @@
 //  ./reducer/index.js
 
 //mport counter from './counterReducer'
-import game from './newgameReducer'
-//import guess from './newgameReducer'
+import newgame from './newgameReducer'
+import makeguessReducer from './makeguessReducer'
 
 export default {
 //    counter,
-    game
+    newgame,
+    makeguessReducer
 }
 
 //step 3
