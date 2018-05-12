@@ -6,7 +6,7 @@ import { newgame,makeguess } from "./actions/game" //step6
 
 import logo from "./logo.svg"
 import "./App.css"
-
+const a =40
 class App extends Component {
 
 
@@ -15,7 +15,8 @@ class App extends Component {
   }
 
   handleClick_= () => {
-    this.props.makeguess()
+    this.props.makeguess('d')
+
   }
 
   render() {
@@ -33,12 +34,13 @@ class App extends Component {
 
         <button onClick={this.handleClick}>Start New Game</button>
 
-        <form onSUbmit={this.handleClick_}>
-            <input type="text" />
+        <form onSUbmit={this.handleClick___}>
+            <input type="text"ref={input => this.makeguess = input} />
+
             <button type="submit"placeholder="First name">make a guess</button>
         </form>
 
-        <button onClick={this.handleClick___}>+</button>
+        <button onClick={this.handleClick_}>+</button>
 
       </div>
     )
@@ -47,12 +49,14 @@ class App extends Component {
 
 //step 4
 const mapStateToProps = state => {
+
   return {
     //counter_: state.counter
     game: state.newgame,
+    makeguess:makeguess.type2=3
     //game: state.makeguessReducer
 
   }
 }
 
-export default connect(mapStateToProps, {newgame,makeguess })(App) //step 4 //step 6 (increment +decrement)
+export default connect(mapStateToProps, {newgame,makeguess})(App) //step 4 //step 6 (increment +decrement)

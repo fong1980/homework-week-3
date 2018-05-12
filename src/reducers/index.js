@@ -2,12 +2,12 @@
 
 //mport counter from './counterReducer'
 import newgame from './newgameReducer'
-import makeguessReducer from './makeguessReducer'
+import makeguess from './makeguessReducer'
 
 export default {
 //    counter,
     newgame,
-    makeguessReducer
+    makeguess
 }
 
 //step 3

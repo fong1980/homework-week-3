@@ -9,10 +9,6 @@ export default (state ={} , { type }) => {
     case "NEW_GAME":
       return {state,newWord:randomWord()}
 
-      // case "MAKE_GUESS":
-      //   console.log(state)
-      //   return {guessWord:'test'}
-
     default:
       return state
 
