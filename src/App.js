@@ -1,12 +1,13 @@
 //app.js
 import React, { Component } from "react"
 import { connect } from "react-redux"
-//import { increment, decrement } from "./actions/counter" //step6
 import { newgame,makeguess } from "./actions/game" //step6
 
 import logo from "./logo.svg"
 import "./App.css"
-const a =40
+
+let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
 class App extends Component {
 
 
@@ -15,8 +16,7 @@ class App extends Component {
   }
 
   handleClick_= () => {
-    this.props.makeguess('d')
-
+    this.props.makeguess()
   }
 
   render() {
@@ -28,22 +28,17 @@ class App extends Component {
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        // step 5
+        </p><p></p>
+
         <h2>{this.props.game.newWord} </h2>
 
-        <button onClick={this.handleClick}>Start New Game</button>
+        <button onClick={this.handleClick}>Start New Game</button><p></p>
 
-        <form onSUbmit={this.handleClick___}>
-            <input type="text"ref={input => this.makeguess = input} />
-
-            <button type="submit"placeholder="First name">make a guess</button>
-        </form>
-
-        <button onClick={this.handleClick_}>+</button>
+        <button onClick={this.props.makeguess('Z')}>A</button>
 
       </div>
     )
+
   }
 }
 
@@ -60,3 +55,33 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {newgame,makeguess})(App) //step 4 //step 6 (increment +decrement)
+
+//
+// class SignupForm extends Component {
+//     constructor(props){
+//         super(props);
+//         this.onSubmit = this.onSubmit.bind(this);
+//     }
+//     onSubmit(val){
+//         debugger;
+//     }
+//     render(){
+//         return (
+//             <form onSUbmit={ (e)=> this.onSubmit(e) }>
+//                 <input type="text" />
+//                 <label></label>
+//                 <button type="submit">Submit</button>
+//             </form>
+//         )
+//     }
+// }
+
+
+
+  //<button onClick={this.props.makeguess({guessLetter:3})}>{alphabet[0]}</button> ik wou dat dit had gewerkt.
+
+// //makeguess = D when you didnt push anything yet...
+//   <button onClick={this.props.makeguess('B')}>B</button>
+//
+//   <button onClick={this.props.makeguess('A')}>D</button>
+//   <button onClick={this.props.makeguess('D')}>C</button>

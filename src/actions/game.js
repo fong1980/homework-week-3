@@ -6,10 +6,10 @@ export const newgame = () => {
     }
 }
 
-export const makeguess = (letterAttempt) => {
+export const makeguess = (guessLetter) => {
     return {
         type: 'MAKE_GUESS',
-        letterAttempt,
+        guessLetter,
 
 
     }
