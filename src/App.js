@@ -1,7 +1,11 @@
 //app.js
+
+import {PureComponent} from 'react'
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import { newgame,makeguess } from "./actions/game" //step6
+import Forum from './component/forum'
+
 
 import logo from "./logo.svg"
 import "./App.css"
@@ -15,9 +19,14 @@ class App extends Component {
     this.props.newgame()
   }
 
+  // handleClick_= () => {
+  //   this.props.makeguess()
+  // }
+
   handleClick_= () => {
     this.props.makeguess()
   }
+
 
   render() {
     return (
@@ -33,8 +42,9 @@ class App extends Component {
         <h2>{this.props.game.newWord} </h2>
 
         <button onClick={this.handleClick}>Start New Game</button><p></p>
+        <button onClick={this.props.makeguess('a')}>Make A Guess</button>
 
-        <button onClick={this.props.makeguess('Z')}>A</button>
+        {<Forum onSubmit={this.handleClick_} />}
 
       </div>
     )
@@ -48,7 +58,7 @@ const mapStateToProps = state => {
   return {
     //counter_: state.counter
     game: state.newgame,
-    makeguess:makeguess.type2=3
+    makeguess:state.makeguess.guessLetter='3'
     //game: state.makeguessReducer
 
   }
